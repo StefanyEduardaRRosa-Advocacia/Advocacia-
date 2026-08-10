@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advocacia e Consultoria Jurídica</title>
+
+    <meta name="description" content="Advocacia e Consultoria Jurídica - Direito Societário, Contábil e Empresarial.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           BARRA PRINCIPAL
+        ========================= */
+
+        header {
+            background-color: #71836a;
+            color: white;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .balance {
+            width: 55px;
+            height: 55px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        /* Haste central */
+        .balance::before {
+            content: "";
+            position: absolute;
+            left: 26px;
+            top: 7px;
+            width: 4px;
+            height: 43px;
+            background: linear-gradient(
+                to right,
+                #b8860b,
+                #f2d16b,
+                #b8860b
+            );
+            border-radius: 4px;
+        }
+
+        /* Top da balança */
+        .balance::after {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 5px;
+            width: 28px;
+            height: 5px;
+            background: linear-gradient(
+                to right,
+                #b8860b,
+                #f3d16b,
+                #b8860b
+            );
+            border-radius: 5px;
+            box-shadow: 0 42px 0 #c59b32;
+        }
+
+        .scale {
+            position: absolute;
+            top: 12px;
+            left: 3px;
+            width: 49px;
+            height: 3px;
+            background: #d5af45;
+            transform: rotate(0deg);
+        }
+
+        .scale-left,
+        .scale-right {
+            position: absolute;
+            top: 15px;
+            width: 2px;
+            height: 22px;
+            background: #c59b32;
+        }
+
+        .scale-left {
+            left: 8px;
+        }
+
+        .scale-right {
+            right: 8px;
+        }
+
+        .pan-left,
+        .pan-right {
+            position: absolute;
+            top: 35px;
+            width: 20px;
+            height: 6px;
+            background: #d6b04d;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+        }
+
+        .pan-left {
+            left: 0;
+        }
+
+        .pan-right {
+            right: 0;
+        }
+
+        .logo-text {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 17px;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.15);
+            color: #f0d47a;
+        }
+
+        /* =========================
+           CAPA
+        ========================= */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 25px;
+            background-color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-symbol {
+            font-size: 70px;
+            color: #b38a25;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 48px;
+            font-weight: normal;
+            color: #111111;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #b38a25;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #444444;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 13px 30px;
+            background-color: #71836a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: #596b52;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .gold-line {
+            width: 70px;
+            height: 3px;
+            background-color: #b38a25;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
+
+        #servicos {
+            background-color: #fafafa;
+        }
+
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: #444444;
+            font-size: 17px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 28px;
+            border: 1px solid #e5e5e5;
+            border-top: 4px solid #b38a25;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            color: #b38a25;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #555555;
+            font-size: 15px;
+        }
+
+        /* =========================
+           CONTATO
+        ========================= */
+
+        #contato {
+            background-color: #ffffff;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #444444;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 28px;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-icon {
+            font-size: 22px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background-color: #71836a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        footer .gold {
+            color: #e1c15a;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================= -->
+
+    <header>
+        <div class="header-container">
+
+            <a href="#inicio" class="logo">
+
+                <div class="balance">
+                    <div class="scale"></div>
+                    <div class="scale-left"></div>
+                    <div class="scale-right"></div>
+                    <div class="pan-left"></div>
+                    <div class="pan-right"></div>
+                </div>
+
+                <div class="logo-text">
+                    Advocacia e Consultoria Jurídica
+                </div>
+
+            </a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#servicos">Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         INÍCIO
+    ========================= -->
+
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-symbol">⚖</div>
+
+                <h1>
+                    Advocacia e <span>Consultoria Jurídica</span>
+                </h1>
+
+                <p>
+                    Soluções jurídicas estratégicas para pessoas e empresas,
+                    com atuação especializada nas áreas societária, contábil
+                    e empresarial.
+                </p>
+
+                <a href="#servicos" class="hero-button">
+                    Conheça nossos serviços
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVIÇOS
+        ========================= -->
+
+        <section id="servicos">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <h2>Nossos Serviços</h2>
+
+                    <div class="gold-line"></div>
+
+                </div>
+
+                <p class="services-intro">
+                    Nossa atuação é voltada à prestação de serviços jurídicos
+                    estratégicos, oferecendo orientação especializada para
+                    empresas e empresários em diferentes momentos de suas
+                    atividades.
+                </p>
+
+
+                <div class="services-grid">
+
+                    <!-- Direito Societário -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">⚖</div>
+
+                        <h3>Direito Societário</h3>
+
+                        <p>
+                            Assessoria jurídica relacionada à estruturação
+                            e organização de sociedades empresárias, incluindo
+                            elaboração e revisão de contratos sociais,
+                            alterações societárias, acordos entre sócios e
+                            orientação sobre relações entre os integrantes
+                            da sociedade.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Direito Contábil -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">▣</div>
+
+                        <h3>Direito Contábil</h3>
+
+                        <p>
+                            Atuação jurídica voltada às questões que envolvem
+                            a atividade contábil e empresarial, proporcionando
+                            suporte na interpretação das obrigações legais,
+                            análise de documentos e orientação jurídica para
+                            auxiliar empresas na condução de suas atividades.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Direito Empresarial -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">▤</div>
+
+                        <h3>Direito Empresarial</h3>
+
+                        <p>
+                            Consultoria e assessoria jurídica para empresas
+                            e empresários, com foco na prevenção de conflitos,
+                            análise de contratos, organização das atividades
+                            empresariais e suporte jurídico para decisões
+                            estratégicas.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTATO
+        ========================= -->
+
+        <section id="contato">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <h2>Entre em Contato</h2>
+
+                    <div class="gold-line"></div>
+
+                </div>
+
+                <div class="contact-box">
+
+                    <p>
+                        Para informações, dúvidas ou agendamento de uma
+                        consulta, entre em contato conosco através do
+                        WhatsApp.
+                    </p>
+
+                    <a
+                        class="whatsapp-button"
+                        href="https://wa.me/5534991359436"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="whatsapp-icon">☏</span>
+                        Falar pelo WhatsApp
+                    </a>
+
+                    <p style="margin-top: 20px; font-size: 15px;">
+                        (34) 99135-9436
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <span class="gold">Advocacia e Consultoria Jurídica</span>.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+</html>
